@@ -4,13 +4,13 @@ import uuidv4 from "uuid/v4";
 import Styles from "./ShoppingInput.module.css";
 
 const ShoppingInput = () => {
-  const {needtoBuyList, setNeedToBuyList} = useContext(ListContext)
+  const {needToBuy, setNeedToBuy} = useContext(ListContext)
   const [text, setText] = useState("")
 
   const handleSubmit = e => {
     e.preventDefault()
     const item = {text, inCart: false, id: uuidv4()}
-    setNeedToBuyList([...needtoBuyList, item])
+    setNeedToBuy([...needToBuy, item])
     setText("")
   }
 
