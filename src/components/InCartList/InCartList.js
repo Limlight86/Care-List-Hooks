@@ -15,7 +15,7 @@ const InCartList = () => {
             text={item.text}
             key={item.id}
             id={item.id}
-            Button={<ToBuyListButton />}
+            Button={ToBuyListButton}
           />
         );
       })}
