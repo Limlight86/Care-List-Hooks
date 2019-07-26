@@ -11,8 +11,8 @@ const inputValidation = (text, setText, needToBuy, inCart) => {
     setText("");
     return false;
   } else {
-    return true
+    return true;
   }
+};
 
-}
-export default inputValidation
+export default inputValidation;
