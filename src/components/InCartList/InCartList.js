@@ -4,7 +4,7 @@ import { ListContext } from "../../context/ListContext";
 import styles from "./InCartList.module.css";
 
 const InCartList = () => {
-  const { inCart } = useContext(ListContext)
+  const { inCart } = useContext(ListContext);
 
   return (
     <div className={styles.list}>
