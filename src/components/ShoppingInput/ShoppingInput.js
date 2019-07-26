@@ -1,22 +1,24 @@
 import React, { useContext, useState } from "react";
 import { ListContext } from "../../context/ListContext";
+import { inputValidation, alphabetize } from "../../util/";
 import uuidv4 from "uuid/v4";
 import Styles from "./ShoppingInput.module.css";
 
 const ShoppingInput = () => {
-  const {needToBuy, setNeedToBuy} = useContext(ListContext)
-  const [text, setText] = useState("")
+  const { needToBuy, inCart, setNeedToBuy } = useContext(ListContext);
+  const [text, setText] = useState("");
 
   const handleSubmit = e => {
-    e.preventDefault()
-    const item = {text, inCart: false, id: uuidv4()}
-    setNeedToBuy([...needToBuy, item])
-    setText("")
-  }
+    e.preventDefault();
+    if (!inputValidation(text, setText, needToBuy, inCart)) {return}
+    const item = { text, inCart: false, id: uuidv4() };
+    setNeedToBuy(alphabetize([...needToBuy, item]));
+    setText("");
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={text} onChange={(e)=> setText(e.target.value)}/>
+      <input type="text" value={text} onChange={e => setText(e.target.value)} />
       <button type="submit">Add to List</button>
     </form>
   );
