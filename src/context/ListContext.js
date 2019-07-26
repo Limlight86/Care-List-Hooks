@@ -7,7 +7,7 @@ const ListContextProvider = ({ children }) => {
   const [inCart, setInCart] = useState([]);
 
   return (
-    <ListContext.Provider value={{ needToBuy, inCart }}>
+    <ListContext.Provider value={{ needToBuy, inCart, setNeedToBuy, setInCart }}>
       {children}
     </ListContext.Provider>
   );
