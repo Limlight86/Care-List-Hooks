@@ -1,10 +1,9 @@
 import React from "react";
+import Layout from './containers/Layout'
 
 function App() {
   return (
-    <div>
-      <h1>hello world</h1>
-    </div>
+    <Layout/>
   );
 }
 
